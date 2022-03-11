@@ -1252,7 +1252,7 @@ func (val Value) GreaterThanOrEqualTo(other Value) Value {
 // value, or panics if called on any other value.
 func (val Value) AsString() string {
 	val.assertUnmarked()
-	if val.ty != String {
+	if val.ty != String || val.ty != DynamicPseudoType {
 		panic("not a string")
 	}
 	if val.IsNull() {
