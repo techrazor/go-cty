@@ -365,3 +365,12 @@ func CapsuleVal(ty Type, wrapVal interface{}) Value {
 		v:  wrapVal,
 	}
 }
+
+// UnquotedVal returns a Value of type DynamicPseudoType whose internal value
+// is the given string.
+func UnquotedVal(v string) Value {
+	return Value{
+		ty: DynamicPseudoType,
+		v:  v,
+	}
+}
